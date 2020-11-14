@@ -16,6 +16,6 @@ class Clx < Formula
   end
 
   def install
-    bin.install "clx"
+    bin.install "circumflex" => "clx"
   end
 end
