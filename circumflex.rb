@@ -2,16 +2,16 @@
 class Circumflex < Formula
   desc "circumflex is Hacker News on the command line"
   homepage ""
-  version "0.2.2"
+  version "0.2.3"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/bensadeh/circumflex/releases/download/0.2.2/circumflex_0.2.2_Darwin_x86_64.tar.gz"
-    sha256 "31ca3af85ec96a849fbcc67467e90bee3e9399104d727b08aa247014d70f7b19"
+    url "https://github.com/bensadeh/circumflex/releases/download/0.2.3/circumflex_0.2.3_Darwin_x86_64.tar.gz"
+    sha256 "b65e86d7e73fd8fd72d8cb757d6d32f0ae090dab15ae2d900251c1916e334001"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/bensadeh/circumflex/releases/download/0.2.2/circumflex_0.2.2_Linux_x86_64.tar.gz"
-    sha256 "acd6269c1796b600f91d315568fa7cdbd97374b3ca7bb2725abca58ae70bb8ed"
+    url "https://github.com/bensadeh/circumflex/releases/download/0.2.3/circumflex_0.2.3_Linux_x86_64.tar.gz"
+    sha256 "0abe65ad57936001da24336785a5c13046a7c3eb0b259175114b1baf7d018163"
   end
 
   def install
