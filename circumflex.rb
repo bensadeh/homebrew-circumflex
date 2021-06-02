@@ -5,25 +5,30 @@
 class Circumflex < Formula
   desc "circumflex is Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex/"
-  version "1.7"
+  version "1.8"
   license "AGPL-3.0-only"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/bensadeh/circumflex/releases/download/1.7/circumflex_1.7_macOS_64-bit.tar.gz"
-    sha256 "ff5e3baae585e446a879dcec784065ae981c50911279a24844d7d02dcc1f3c05"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/bensadeh/circumflex/releases/download/1.8/circumflex_1.8_macOS_64-bit.tar.gz"
+      sha256 "1337ee868eea7e7729362db9ac7d0a93490ff62d7feb0799650521f11b96c9e5"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/bensadeh/circumflex/releases/download/1.8/circumflex_1.8_macOS_arm64.tar.gz"
+      sha256 "badd96d5f199ac4835cb2e1d2a40f5c372b68be52444e8e2bfaacea36625decb"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/bensadeh/circumflex/releases/download/1.7/circumflex_1.7_macOS_arm64.tar.gz"
-    sha256 "760a8803d44077421b0ea4efd5fcfbaf7d8bf391c6b4e405b486f48e0f195652"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/bensadeh/circumflex/releases/download/1.7/circumflex_1.7_Linux_64-bit.tar.gz"
-    sha256 "0df20c00177bde62ebeab2c6b7af9f4ac891ef75f3451fbf5a70f7e8595722a7"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/bensadeh/circumflex/releases/download/1.7/circumflex_1.7_Linux_arm64.tar.gz"
-    sha256 "8b582fe12cd28ccced16b0a65606e065adacb41425ea605cdadee859f11f3315"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/bensadeh/circumflex/releases/download/1.8/circumflex_1.8_Linux_64-bit.tar.gz"
+      sha256 "b6e492410f01de30477ad17c65de00a8346356275db3f88178c0c8908f3dac9c"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bensadeh/circumflex/releases/download/1.8/circumflex_1.8_Linux_arm64.tar.gz"
+      sha256 "139dd76b11c9c96c8489f1c343f9182d68b95be8a9cae7315d2c45af2c3647b4"
+    end
   end
 
   depends_on "less"
