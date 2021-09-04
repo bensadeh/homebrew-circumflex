@@ -5,29 +5,29 @@
 class Circumflex < Formula
   desc "circumflex is a command line tool for browsing Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex/"
-  version "1.19"
+  version "1.20"
   license "AGPL-3.0-only"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.19/circumflex_1.19_macOS_64-bit.tar.gz"
-      sha256 "248b62913e1f918e567e1f55b5229ce11dfb4de81e8454033fd594ab02ffd256"
+      url "https://github.com/bensadeh/circumflex/releases/download/1.20/circumflex_1.20_macOS_64-bit.tar.gz"
+      sha256 "6803b8cc595d5143569b6b1096dae8f90a27b67c13fbeab6c2931bfc3b4241fb"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.19/circumflex_1.19_macOS_arm64.tar.gz"
-      sha256 "7971ef6ef37d7bcfe28f84060d2d71271b8dc85bd83dac89355636fb9fd5e4a5"
+      url "https://github.com/bensadeh/circumflex/releases/download/1.20/circumflex_1.20_macOS_arm64.tar.gz"
+      sha256 "9a6873a05cb4bd13e00bfaf6410f8d28b1388dbd1a91f5b49b80bc4e5becf603"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.19/circumflex_1.19_Linux_64-bit.tar.gz"
-      sha256 "964d57309fe115256d2df9b6322f57e10da0a28588027c522639ee4931c37a2b"
+      url "https://github.com/bensadeh/circumflex/releases/download/1.20/circumflex_1.20_Linux_64-bit.tar.gz"
+      sha256 "6c1e0d9bc428aed0c1f9d2227da16f5d440cc9e626a38608fb0524ef097605ce"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.19/circumflex_1.19_Linux_arm64.tar.gz"
-      sha256 "ce8de583550a3c53affce215c547e82a1499187a510a71113824baa5cd47a54c"
+      url "https://github.com/bensadeh/circumflex/releases/download/1.20/circumflex_1.20_Linux_arm64.tar.gz"
+      sha256 "82ec92cf9c67e99eb19a0c7d2a5432b78e3535e2e101ddf72ed2b6843d49f415"
     end
   end
 
