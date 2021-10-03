@@ -5,29 +5,29 @@
 class Circumflex < Formula
   desc "circumflex is a command line tool for browsing Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex/"
-  version "1.21"
+  version "1.22"
   license "AGPL-3.0-only"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.21/circumflex_1.21_macOS_64-bit.tar.gz"
-      sha256 "6a72f4069a1a9cd18f3346e7ca2b943c20e50e545f26e0b3e8c0b9eeb1edc22c"
+      url "https://github.com/bensadeh/circumflex/releases/download/1.22/circumflex_1.22_macOS_64-bit.tar.gz"
+      sha256 "40444e882aad3e3787182ad4fb16549966d8df86c4f3e580c92c9a8b284e6a0d"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.21/circumflex_1.21_macOS_arm64.tar.gz"
-      sha256 "f1c7088173b240417948607505375b411868be249cd6d4dce6a3c75336fed4dd"
+      url "https://github.com/bensadeh/circumflex/releases/download/1.22/circumflex_1.22_macOS_arm64.tar.gz"
+      sha256 "184ff19814b76c4354fa106dffba0a590443c7b227cf34fb10ac6902f8d94d6a"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.21/circumflex_1.21_Linux_64-bit.tar.gz"
-      sha256 "a28182ac8b8e3bdece9498059fd8c72124ec377a0cfb2feb0dc1bd88083c502c"
+      url "https://github.com/bensadeh/circumflex/releases/download/1.22/circumflex_1.22_Linux_64-bit.tar.gz"
+      sha256 "120e8dac5da12101cedc82c6d9fe2d26f18f4c41bd24fac4b0f795a370e8f3c0"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.21/circumflex_1.21_Linux_arm64.tar.gz"
-      sha256 "63d5729be7f7b213c1f53b653bf95690719b1a51e00fed3b7b2868a1185d1370"
+      url "https://github.com/bensadeh/circumflex/releases/download/1.22/circumflex_1.22_Linux_arm64.tar.gz"
+      sha256 "286bd4f3c85d70477bcd452365221ce6fd464f62ecc0adca425890fa64776c81"
     end
   end
 
@@ -35,5 +35,6 @@ class Circumflex < Formula
 
   def install
     bin.install "circumflex" => "clx"
+    man.install
   end
 end
