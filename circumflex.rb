@@ -35,6 +35,6 @@ class Circumflex < Formula
 
   def install
     bin.install "circumflex" => "clx"
-    man.install "share/man/"
+    man.install "share/man"
   end
 end
