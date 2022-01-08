@@ -5,21 +5,21 @@
 class Circumflex < Formula
   desc "circumflex is a command line tool for browsing Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex/"
-  version "1.30"
+  version "1.31"
   license "AGPL-3.0-only"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.30/circumflex_1.30_macOS_64-bit.tar.gz"
-      sha256 "70e73248fd0986e08cdc04cb08f7b5e93d2ab323fe1e2ba8052f89c9620b4fc7"
+    if Hardware::CPU.arm?
+      url "https://github.com/bensadeh/circumflex/releases/download/1.31/circumflex_1.31_macOS_arm64.tar.gz"
+      sha256 "122ac4d2892dd3c54f6588f9ddbed536b1ce31753699c985b5b854671414bbb6"
 
       def install
         bin.install "circumflex" => "clx"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.30/circumflex_1.30_macOS_arm64.tar.gz"
-      sha256 "f82e8563c5e03ccc33280508f1cceae9330a4bb2e7359a9865de0fde3d6c334d"
+    if Hardware::CPU.intel?
+      url "https://github.com/bensadeh/circumflex/releases/download/1.31/circumflex_1.31_macOS_64-bit.tar.gz"
+      sha256 "915326c1a5c7265e921b7e4ff42795ab75ac43f328d63733fa76c6c8a571b4c4"
 
       def install
         bin.install "circumflex" => "clx"
@@ -28,17 +28,17 @@ class Circumflex < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.30/circumflex_1.30_Linux_64-bit.tar.gz"
-      sha256 "d48487b40cc9c8893d8ae0c7ee9ab7fcf3840406e403f802d2eefae0e9d43808"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bensadeh/circumflex/releases/download/1.31/circumflex_1.31_Linux_arm64.tar.gz"
+      sha256 "2bb720cb5689837c05acd4a9d2f33fcf43b9f904400be81e2a06af8212a60e16"
 
       def install
         bin.install "circumflex" => "clx"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bensadeh/circumflex/releases/download/1.30/circumflex_1.30_Linux_arm64.tar.gz"
-      sha256 "1467d241c1832ab262a8d577419c8a3ae753decada1dec3df085539b012a25ab"
+    if Hardware::CPU.intel?
+      url "https://github.com/bensadeh/circumflex/releases/download/1.31/circumflex_1.31_Linux_64-bit.tar.gz"
+      sha256 "345cb32f3249e88dbb6e313f05d109295f870ac3f2da49af45b5a7a4c52a1f6c"
 
       def install
         bin.install "circumflex" => "clx"
