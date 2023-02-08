@@ -5,15 +5,15 @@
 class Circumflex < Formula
   desc "circumflex is a command line tool for browsing Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex/"
-  version "2.8"
+  version "2.8.1"
   license "AGPL-3.0-only"
 
   depends_on "less"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bensadeh/circumflex/releases/download/2.8/circumflex_2.8_macOS_64-bit.tar.gz"
-      sha256 "7e46748edf95f8aa9b197df1da1db56582469c4e1e72a5bb8f10607cc931138e"
+      url "https://github.com/bensadeh/circumflex/releases/download/2.8.1/circumflex_2.8.1_macOS_64-bit.tar.gz"
+      sha256 "910c013191dc664e39b8653ebcfa3e0af67aab4493b11087ad7a3b25c56791ae"
 
       def install
         bin.install "circumflex" => "clx"
@@ -21,8 +21,8 @@ class Circumflex < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bensadeh/circumflex/releases/download/2.8/circumflex_2.8_macOS_arm64.tar.gz"
-      sha256 "b80fefbb31e25d48861873cb8c4e64371599d4a30aa9258181330a31bd5ef5cd"
+      url "https://github.com/bensadeh/circumflex/releases/download/2.8.1/circumflex_2.8.1_macOS_arm64.tar.gz"
+      sha256 "b8f129933606dffc04cd7cb6fa381763c0c33bc4f625b9b803c6dab5898d957c"
 
       def install
         bin.install "circumflex" => "clx"
@@ -33,8 +33,8 @@ class Circumflex < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bensadeh/circumflex/releases/download/2.8/circumflex_2.8_Linux_arm64.tar.gz"
-      sha256 "45fca53b78c86a06eb70bb531eef0b8ea77c451962adce6d35d1bf3834d22a99"
+      url "https://github.com/bensadeh/circumflex/releases/download/2.8.1/circumflex_2.8.1_Linux_arm64.tar.gz"
+      sha256 "d04ff6b9df36f0ec03c48c74b817e999cb9c876a951f75c077219f7876abb897"
 
       def install
         bin.install "circumflex" => "clx"
@@ -42,8 +42,8 @@ class Circumflex < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bensadeh/circumflex/releases/download/2.8/circumflex_2.8_Linux_64-bit.tar.gz"
-      sha256 "02a63155d92fb04c541c9a8bd5477468339f7db91eab88b6db38c40dd142e63d"
+      url "https://github.com/bensadeh/circumflex/releases/download/2.8.1/circumflex_2.8.1_Linux_64-bit.tar.gz"
+      sha256 "ee40c89689a42bd018308f02dc8b2208578ab5e3f680fee90856560969e3f8ce"
 
       def install
         bin.install "circumflex" => "clx"
