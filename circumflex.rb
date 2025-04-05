@@ -5,24 +5,24 @@
 class Circumflex < Formula
   desc "circumflex is a command line tool for browsing Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex/"
-  version "3.7"
+  version "3.8"
   license "AGPL-3.0-only"
 
   depends_on "less"
 
   on_macos do
-    on_intel do
-      url "https://github.com/bensadeh/circumflex/releases/download/3.7/circumflex_3.7_darwin_amd64.tar.gz"
-      sha256 "c1293fcbc45eef0489e8f8e33d3d5fba88f94030789aebbd6998c21b308c2eb5"
+    if Hardware::CPU.intel?
+      url "https://github.com/bensadeh/circumflex/releases/download/3.8/circumflex_3.8_darwin_amd64.tar.gz"
+      sha256 "16fe7dc48a392f8978f5cfce812c134a58619bb64818cb18cbbb3fe14edba523"
 
       def install
         bin.install "circumflex" => "clx"
         man1.install "#{buildpath}/share/man/clx.1"
       end
     end
-    on_arm do
-      url "https://github.com/bensadeh/circumflex/releases/download/3.7/circumflex_3.7_darwin_arm64.tar.gz"
-      sha256 "ebce358d0e7824567edc8e84d9cdfc3b7a05d830cd5fe9072a1f2e5f1bb640e2"
+    if Hardware::CPU.arm?
+      url "https://github.com/bensadeh/circumflex/releases/download/3.8/circumflex_3.8_darwin_arm64.tar.gz"
+      sha256 "23abd96fd44e7a1dd2f43d73318ad5eea48f9783aa71ea91074b05831f06582d"
 
       def install
         bin.install "circumflex" => "clx"
@@ -32,10 +32,10 @@ class Circumflex < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bensadeh/circumflex/releases/download/3.7/circumflex_3.7_linux_amd64.tar.gz"
-        sha256 "ae9ad7c0db3f444e793e71d37db86e3d2c79c895c9c335ca7c8ffc04c79dc603"
+        url "https://github.com/bensadeh/circumflex/releases/download/3.8/circumflex_3.8_linux_amd64.tar.gz"
+        sha256 "4c30c482bb929947b08f1049e1b2108bfb3d6b7c8b107850ee8931d1489c197a"
 
         def install
           bin.install "circumflex" => "clx"
@@ -43,10 +43,10 @@ class Circumflex < Formula
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bensadeh/circumflex/releases/download/3.7/circumflex_3.7_linux_arm64.tar.gz"
-        sha256 "d704e8e615b01c43a158c75ae391635f56969d25cacfd0dd708812df95b384a6"
+        url "https://github.com/bensadeh/circumflex/releases/download/3.8/circumflex_3.8_linux_arm64.tar.gz"
+        sha256 "6baba40caf0d4daa467293a0480b2189931a8db9ee200f34b218991e8a3ff0be"
 
         def install
           bin.install "circumflex" => "clx"
